@@ -1,10 +1,16 @@
-# Agent-Deploy
+# Agent Deploy
 
-Deployment scripts optimized for AI coding assistant workflows.
+This slash command provides a templated set of instructions asking an AI agent to generate an agent-specific version of a deployment script found in a code repository.
 
-## The Problem
+Deployment scripts often generate verbose outputs. 
 
-When working with AI coding assistants (Claude Code, GitHub Copilot, etc.), verbose deployment output consumes context tokens unnecessarily. A typical Docker build can output hundreds of lines that provide no value to the AI assistant.
+This verbosity poses a challenge to context load when ingested by an agent or a sub-agent who mop up lots of unnecessary lines of Bash output just to ultimately know a simple success or failure message.
+
+The objective of creating agent-specific deployment scripts is to create an alternative deployment pathway specifically intended for use by AI agents, bypassing this otherwise useful verbosity.
+
+The human can execute the human version, or the agent can when there is something to debug, but for routine deployments, the streamlined, verbosity-minimizing version can be used instead.
+
+The slash command provided instructs the agent to create a refactored version of the script for this purpose and to update its own internal references to refer to it. An example is provided of a before and after deployment script.
 
 ## The Solution
 
